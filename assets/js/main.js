@@ -57,3 +57,30 @@ teclado1.mostrarDatosEquipo();
 const disco1 = new Disco("56585","Seagate","SGT005","SSD","1TB");
 console.log(disco1);
 disco1.mostrarDatosEquipo();
+
+
+
+/******************************* Ejemplo Generadores *****************************************/
+function* mostrarInformacion() {
+
+    yield console.log("Primer Mensaje");
+    console.log("Mensaje intermedio"); 
+    yield console.log("Segundo Mensaje");
+    yield console.log("Tercer Mensaje");
+}
+
+const generador = mostrarInformacion()
+
+setTimeout(() => {
+    generador.next()
+}, 2000);
+
+setTimeout(() => {
+    generador.next()
+}, 5000);
+
+setTimeout(() => {
+    generador.next()
+}, 10000);
+
+/******************************* Fin Ejemplo Generadores *****************************************/
